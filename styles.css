@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday, Jesse!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1e1e1e;
+            text-align: center;
+            color: #ffffff;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #FFD700;
+            font-size: 60px;
+            margin-top: 50px;
+        }
+        p {
+            color: #FFFFFF;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        /* Fireworks animation */
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: radial-gradient(circle, #ff6347, transparent);
+            border-radius: 50%;
+            animation: explode 1.5s ease-in-out infinite;
+        }
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+        /* Firework positions */
+        #firework1 {
+            top: 40%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+        #firework2 {
+            top: 30%;
+            left: 70%;
+            animation-delay: 0.5s;
+        }
+        #firework3 {
+            top: 70%;
+            left: 40%;
+            animation-delay: 1s;
+        }
+        #firework4 {
+            top: 50%;
+            left: 60%;
+            animation-delay: 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday, Jesse!</h1>
+    <p>Wishing you a fantastic day filled with love, happiness, and fun!</p>
+
+    <!-- Fireworks -->
+    <div class="firework" id="firework1"></div>
+    <div class="firework" id="firework2"></div>
+    <div class="firework" id="firework3"></div>
+    <div class="firework" id="firework4"></div>
+</body>
+</html>
