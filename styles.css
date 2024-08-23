@@ -6,21 +6,22 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-h1 {
-    color: #ff6347;
+h1.moving-text {
+    position: absolute;
     font-size: 48px;
-    margin: 0;
+    color: #fff;
+    animation: moveText 10s linear infinite;
     z-index: 2;
 }
 
-p {
-    color: #fff;
-    font-size: 24px;
-    z-index: 2;
+@keyframes moveText {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 .fireworks-container {
@@ -30,41 +31,51 @@ p {
     overflow: hidden;
 }
 
-/* Basic fireworks styles */
 .firework {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 69, 0, 0.8), transparent);
-    width: 100px;
-    height: 100px;
-    animation: explode 1.5s ease-in-out infinite;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    animation: explode 1.5s infinite;
 }
 
-.firework:nth-child(1) {
-    top: 20%;
-    left: 30%;
-    background: radial-gradient(circle, rgba(255, 0, 0, 0.8), transparent);
+.firework1 {
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0));
+    top: 80%;
+    left: 10%;
     animation-delay: 0s;
 }
 
-.firework:nth-child(2) {
-    top: 50%;
-    left: 60%;
-    background: radial-gradient(circle, rgba(0, 255, 0, 0.8), transparent);
-    animation-delay: 0.5s;
+.firework2 {
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0));
+    top: 80%;
+    left: 30%;
+    animation-delay: 1s;
 }
 
-.firework:nth-child(3) {
+.firework3 {
+    background: radial-gradient(circle, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0));
     top: 80%;
-    left: 40%;
-    background: radial-gradient(circle, rgba(0, 0, 255, 0.8), transparent);
-    animation-delay: 1s;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.firework4 {
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.8), rgba(255, 255, 0, 0));
+    top: 80%;
+    left: 70%;
+    animation-delay: 3s;
 }
 
 @keyframes explode {
     0% {
         transform: scale(0);
         opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.5;
     }
     100% {
         transform: scale(3);
